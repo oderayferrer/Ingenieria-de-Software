@@ -108,7 +108,7 @@ No pueden existir códigos repetidos
 **Entonces** la aplicación informa "No se ha podido realizar la carga ya que el codigo de mobiliario ya existe"
 
 **Escenario 2: Carga fallida por datos incompletos**
-**Dado** un encargado de mobiliario que se encuentra autenticado en el sistema y el dato faltante de estado
+**Dado** el dato faltante de estado
 **Cuando** el encargado ingresa los datos: codigo de mobiliario 02345, tipo de mueble "Silla", fecha de creacion "27/6/2026", fecha de ultimo mantenimiento "23/5/2026", precio de alquiler $1000 y el campo de estado vacio y presiona "Cargar mobiliario"
 **Entonces** la aplicación informa "No se han ingresado todos los datos requeridos"
 
@@ -149,13 +149,13 @@ La tarjeta debe tener fondos suficientes para pagar el monto a abonar
 Únicamente con tarjeta de crédito
 
 **CRITERIOS DE ACEPTACION:**
-una tarjeta de crédito valida con numero "4545 1234 5678 9012" con fondos suficientes de $10000
+
 
 
 **Escenario 1: Pago exitoso**
 **Dado** la reserva de mobiliario 1234 pendiente de pago, una tarjeta de crédito con un numero valido "4545 1234 5678 9012" valida con fondos suficientes de $10000 (referente al 20% del alquiler)
 **Cuando** el cliente ingresa la tarjeta de crédito "4545 1234 5678 9012" y presiona el botón "Pagar"
-**Entonces** el sistema informa "El pago se ha realizado con éxito" e informa al cliente su numero de reserva 1234
+**Entonces** el sistema valida y realiza el cobro del 20% del monto total e informa "Pago realizado" e informa al cliente su numero de reserva 1234
 
 **Escenario 2: Reserva fallida por pago rechazado**
 **Dado** la reserva de mobiliario 3452 pendiente de pago, una tarjeta de crédito con numero "4545 1234 5678 9012" valida que no cuenta con fondos suficientes $50 (referente al 20% de alquiler)
@@ -177,10 +177,7 @@ una tarjeta de crédito valida con numero "4545 1234 5678 9012" con fondos sufic
 **Cuando** el cliente ingresa un número de tarjeta y presiona “Pagar” 
 **Entonces** el sistema retorna un error por conexión no establecida. 
 
-**Escenario :**
-**Dado**
-**Cuando** 
-**Entonces** 
+
 
 # ==Debería hacer realizar reserva y pago de reserva junto o separado?==
 ### RTA DE LA PROFE: SI, REVISAR EJEMPLO DE LA PRACTICA DE HU
@@ -1059,7 +1056,7 @@ El crédito solicitado no debe superar los $400.000
 **TÍTULO:** Como usuario quiero consultar el estado del tramite para saber como viene el proceso.
 
 **REGLAS DE NEGOCIO:** 
-Si supera en 3 veces el ingreso de código existente el sistema bloquea la ip por 24 horas
+Si supera en 3 veces el ingreso de código inexistente el sistema bloquea la ip por 24 horas
 
 **CRITERIOS DE ACEPTACION:**
 
@@ -1071,12 +1068,18 @@ Si supera en 3 veces el ingreso de código existente el sistema bloquea la ip po
 **Escenario 2: Consulta fallida por numero de comprobante inexistente**
 **Dado** un numero de comprobante 123456 inexistente,  sin ingreso previo de código inexistente
 **Cuando** se ingresa el numero de comprobante 123456 y se presiona "Consultar"
-**Entonces** el sistema informa "Tramite inexistente"
+**Entonces** el sistema informa "Tramite inexistente" y suma 1 intento fallido al contador
 
 **Escenario 3: Consulta fallida por numero de comprobante inexistente + bloqueo** 
 **Dado** un numero de comprobante 654321 inexistente, habiéndose ingresado previamente 2 veces un código inexistente
 **Cuando** se ingresa el numero de comprobante 654321 y se presiona "Consultar"
 **Entonces** el sistema bloquea la ip de la maquina que efectua la consulta por 24 horas e informa “Usted ha excedido el número de consultas inválidas”.
+
+**Escenario 4: Consulta fallida por usuario bloqueado**
+**Dado** una ip "265.252.452.33" bloqueada por exceder los 3 intentos
+**Cuando** se ingresa el numero de comprobante 6534532 y se presiona "Consultar"
+**Entonces** el sistema informa "Usuario bloqueado"
+
 
 **ID: Listar créditos**
 
@@ -1312,3 +1315,4 @@ Cada código tiene vigencia de 5 minutos
 
 
 
+correcto / incorrecto no valido/invalido

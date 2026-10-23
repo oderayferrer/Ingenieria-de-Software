@@ -1,0 +1,91 @@
+Convenciones
+
+**Nombre de los estados**
+	Verbos en gerundio (ando-endo: ingresando, esperando)
+
+**Eventos**
+	Manifiestan la ocurrencia de un estímulo que conlleva la salida del estado (no puede ser verbo en infinitivo, no confundir con una acción). Tiene forma impersonal. Ej: Se presionó tecla.
+
+**Condición**
+	Condición Lógica que puede evaluar el sistema. Ej: tecla es “Enter”
+
+**Acción**
+	Verbo en infinitivo con sustantivo en función del sistema (no confundir con acciones del usuario. Ej: “presionar tecla” no es algo que hace el sistema)Convenciones
+
+**Nombre de los estados**
+	Verbos en gerundio (ando-endo: ingresando, esperando)
+
+**Eventos**
+	Manifiestan la ocurrencia de un estímulo que conlleva la salida del estado (no puede ser verbo en infinitivo, no confundir con una acción). Tiene forma impersonal. Ej: Se presionó tecla.
+
+**Condición**
+	Condición Lógica que puede evaluar el sistema. Ej: tecla es “Enter”
+
+**Acción**
+	Verbo en infinitivo con sustantivo en función del sistema (no confundir con acciones del usuario. Ej: “presionar tecla” no es algo que hace el sistema)
+
+
+## Ejercicio 1.
+Dado el siguiente diagrama que representa el funcionamiento de una Licuadora, corrija los errores existentes.
+La licuadora tiene 2 velocidades y sólo dos botones: uno para aumentar la velocidad y otro para disminuirla.
+La licuadora se apaga con el botón disminuir estando en la primera velocidad.
+
+![[Pasted image 20261023132319.png]]
+
+## Ejercicio 2. 
+Complete el siguiente diagrama DTE que ilustra el comportamiento de una máquina de gaseosas, en base al siguiente enunciado:
+La máquina se activa cuando el usuario ingresa una moneda. Todos los productos tienen el mismo valor. Las monedas son ingresadas de a una y cada una es validada en ese mismo momento, en base a su tamaño, peso y espesor mediante un dispositivo específico. Al mismo tiempo se valida el monto ingresado. Si alguna moneda no es válida, se retorna al usuario, y continúa el proceso normalmente. Como siguiente paso, el usuario debe seleccionar un producto. Si no hay stock de dicho producto entonces debe retornar las monedas y mostrar un mensaje informando tal situación. Si hay stock, se entrega el producto, y en caso de que se haya ingresado un monto superior, la máquina retorna el vuelto correspondiente. El usuario puede cancelar en cualquier momento, dando por finalizado todo el proceso
+
+
+
+## Ejercicio 4. 
+Modelar a través de un DTE el funcionamiento de un simulador de submarino.
+El simulador se enciende cuando se presiona encender, momento en el cual se activa una pantalla, se activa el panel de control y queda a la espera de que el operador le dé la orden de inmersión. Cuando el operador le da la orden de inmersión, si el submarino se encuentra en posición de sumersión, comienza a descender. El operador debe aumentar la presión de los tanques de lastre para que el submarino gane profundidad; cada vez que el operador aumenta la presión, el submarino desciende 20 metros emitiendo un pitido e informando la profundidad en pantalla.
+Si el submarino no se encuentra en posición para sumersión, se emiten tres pitidos y se espera una próxima orden de inmersión.
+Cuando el operador da la orden de operar en profundidad, se chequea que se hayan alcanzado los 300 metros o más; si esto es así, el submarino comienza a navegar en modo de inmersión total. De lo contrario, suenan dos pitidos y se reproduce el mensaje "Aumente profundidad".
+Cuando el operador da la orden de emerger, el submarino comienza a ascender, activando un sensor que mide la profundidad en tiempo real. Cada 10 segundos se chequea la profundidad y se reproduce un mensaje con la profundidad alcanzada. Cuando la profundidad llega a 10 metros, se activan las válvulas de purga de lastre y el submarino emerge a la superficie finalizando el proceso.
+
+![[Pasted image 20261023154743.png]]
+
+## Ejercicio 5. 
+Modelar mediante un DTE el ingreso del personal a una empresa.
+El registro de los presentes de los empleados se realiza a través de una máquina. Para iniciar el registro se selecciona la opción “Registrar Asistencia”. Luego, se habilitan dos opciones posibles para registrar su presente: mediante su tarjeta o su huella dactilar.
+Si el empleado selecciona “registro por tarjeta”, debe pasar la tarjeta por un lector. Si la tarjeta es válida se habilita un teclado virtual donde debe proceder a ingresar un código de 4 dígitos, en el caso de que la tarjeta fuese inválida se informa el error. Para el ingreso de los 4 dígitos se tienen sólo 3 intentos, pasados los 3 intentos se anula la operación y se retorna la tarjeta Si opta por registrar el presente mediante la huella dactilar sólo debe apoyar el dedo en el scanner.
+En cualquiera de los 2 casos si el ingreso es exitoso se muestra en el display la fecha y el horario de entrada y un mensaje de éxito, caso contrario, se visualiza un mensaje de error y se emite un pitido. 
+
+![[Pasted image 20261023165554.png]]
+
+## Ejercicio 6. 
+Modelar mediante un DTE el funcionamiento de un personaje para un juego electrónico.
+El personaje es un guardia medieval de un castillo. Su objetivo es vigilar el castillo y eliminar enemigos que puedan aparecer.
+El personaje comienza su ronda de vigilancia cuando es ==creado por el sistema, con el 100% de energía==. El modo normal del personaje es ==vigilar el castillo==, ==mientras no detecte un enemigo==. ==Al detectar uno, el personaje pasa a modo combate==. Si el enemigo está ==fuera del castillo==, el personaje ==saca su arco y flecha==. Si el enemigo está ==dentro del castillo==, el personaje ==saca su espada==. ==Durante el combate==, el personaje ==puede recibir “golpes”==, ==reduciendo su energía 10% por cada uno==. Si el personaje ==gana el combate==, ==recupera el 50% de energía y vuelve con su ronda de vigilancia==. Pero si pierde energía hasta quedarse con el 20%, entonces el personaje comienza a huir del enemigo, guardando su arma. Durante la huida el personaje puede seguir recibiendo “golpes”, hasta quedarse sin energía y morir, quedando fuera del juego. Cuando pierde de vista al enemigo, el personaje deja de huir y vuelve con su ronda de vigilancia, ganando un 30% de energía.
+
+![[Pasted image 20261023172435.png]]
+
+## Ejercicio 7. 
+Modelar mediante un DTE el funcionamiento de una estación meteorológica.
+Una estación de telecomunicaciones cuenta con una antena satelital que opera en distintos estados para garantizar la comunicación con el satélite. Al ==encenderse==, la ==antena comienza en un estado de reposo (standby)==. Desde este estado, ==cuando se recibe una solicitud de comunicación==, su respuesta depende de la intensidad de la señal captada del satélite. ==Si la señal es igual o superior a 10 µW (microvatios), la antena pasa al modo de comunicación== ==y procede a realizar la transmisión.== Si la señal es ==inferior a ese umbral, la antena inicia un proceso de realineación durante un minuto para intentar mejorar la recepción.==
+Una vez finalizado el proceso de realineación, si la señal supera los 10 µW, se establece la comunicación de manera normal. Si la señal sigue siendo insuficiente, el incidente se registra en la bitácora y se procede a realizar un ==diagnóstico completo de los sistemas==. Tras el diagnóstico, si no se detectan fallos, la antena vuelve a realizar el proceso de realineación. En caso de que se identifiquen errores en el diagnóstico, estos se documentan en la bitácora y la antena regresa al estado de reposo. Cuando se establece comunicación, esta puede finalizar de manera exitosa o fallida. En caso de fallos, el error se registra en la bitácora. ==Independientemente del resultado, la antena retorna al estado de standby una vez concluida la operación.==
+==Cabe destacar que, en cualquier momento, la antena puede ser apagada, interrumpiendo todas las operaciones en curso==
+
+![[Pasted image 20261023175626.png]]
+
+## Ejercicio 8. 
+Modelar mediante DTE la búsqueda de un destino para navegación por GPS.
+Al seleccionar la opción “ir a destino” el sistema visualiza la “pantalla inicial de búsqueda” con las opciones: “últimos encontrados” y “nuevo destino”.
+Si el usuario selecciona “últimos encontrados” se muestra una lista con los últimos 5 lugares buscados. Luego, el usuario debe seleccionar un lugar de dicha lista para iniciar la navegación.
+Si el usuario selecciona “nuevo destino” el sistema visualiza un campo para completar la calle del destino, compuesta por caracteres alfanuméricos, y un botón “siguiente”. Una vez completado el ingreso de la calle y presionado “siguiente” el sistema muestra el campo altura, compuesto por caracteres numéricos, y un botón “confirmar”. Al confirmar el GPS busca la dirección ingresada, si se encuentra dicha dirección se inicia la navegación. Si la dirección no es encontrada por el sistema se informa el error y se retorna a la pantalla de búsqueda.
+Para ambos casos, se muestra el mapa de ruta correspondiente y las opciones “Ir” y “Cancelar”. Si se selecciona “Ir”, el GPS comienza con la navegación. Si el usuario cancela se retorna a la “pantalla inicial de búsqueda”. Cuando GPS se encuentra navegando y pierde la señal de satélite entonces se queda a la espera de recepción de señal, cuando logra restablecer la señal continúa con la navegación. Si luego de 3 minutos no logra encontrar señal se cancela automáticamente la navegación y se retorna a la pantalla de búsqueda.
+Mientras se está navegando el sistema actualiza una vez por segundo la ubicación geográfica, la información de la velocidad, distancia y tiempo restante.
+Cuando termina la navegación el sistema retorna un mensaje de destino alcanzado.
+El usuario puede detener la navegación en cualquier momento presionando el botón “detener navegación”, en cuyo caso, el sistema, retorna a la pantalla de inicio con la opción “Ir a destino”.
+
+![[Pasted image 20261023145857.png]]
+
+## Ejercicio 9. 
+Modelar mediante un DTE el funcionamiento de una cabina de fotografía automática. La cabina comienza a funcionar cuando se inserta una ficha, momento en el cual, se enciende el display, se prenden las luces, se muestra un listado de escenarios y la cabina queda a la espera de la selección de un escenario de fondo. Para la selección del escenario se dispone de un tiempo máximo de 1 minuto. Cada
+segundo la cabina emite una señal sonora y muestra en display el tiempo restante para realizar la selección. Si se agota el minuto, la cabina se apaga. La cabina posee escenarios públicos y premium. Los escenarios que puede seleccionar cualquier persona son los públicos. Si se selecciona un escenario premium, la cabina muestra el mensaje “Escenario no permitido” y queda a la espera de la selección de otro escenario. Cuando se selecciona el escenario, se muestra un listado de marcos decorativos y la cabina queda a la espera de la selección de un marco para la fotografía. Para ello se cuenta con 1 minuto y la cabina se comporta de la misma manera que durante la espera de la selección del escenario con la diferencia que solo hay marcos públicos.
+Una vez seleccionado el marco, la cabina comienza la sesión fotográfica. Mientras la sesión se encuentra en curso, se puede pausar mediante un botón habilitado para tal fin. Si se selecciona pausar, la sesión se detiene y se habilita un botón para reanudarla.
+Se dispone de 30 segundos para reanudar la sesión. Transcurrido ese tiempo sin reanudarla, se aborta la sesión.
+Cuando la sesión finaliza, se imprime la foto, quedando la cabina en estado consistente para una próxima sesión
+

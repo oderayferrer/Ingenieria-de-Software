@@ -1309,10 +1309,4 @@ Cada código tiene vigencia de 5 minutos
 
 
 
-
-
-
-
-
-
 correcto / incorrecto no valido/invalido
